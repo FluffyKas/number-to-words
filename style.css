@@ -61,12 +61,13 @@ main {
   max-width: 50rem;
   margin: 0 auto;
   border: 3px dashed #22223b;
-  padding: 1.5rem 3rem;
+  padding: 1.75rem 3rem;
 }
 
 .title {
+  font-size: clamp(.5rem, 6vw, 2.5rem);
+  margin-block-end: 5rem;
   text-align: center;
-  margin-block-end: 3.5rem;
 }
 
 /* Form styles */
@@ -91,7 +92,7 @@ label {
   left: 1rem;
   transition: all .2s ease-out;
   cursor: text;
-  font-size: 1rem;
+  font-size: clamp(.65rem, 3vw, 1rem);
 }
 
 input {
@@ -226,7 +227,8 @@ input[type=number]
 /* Result display */
 
 .result-container {
-  margin-block: 3rem 1.5rem;
+  font-size: clamp(.5rem, 3vw, 1rem);
+  margin-block: 2rem 1.5rem;
 }
 
 .result {
