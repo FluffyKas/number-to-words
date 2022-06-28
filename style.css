@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+
+/* Resets, general styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0; 
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+body {
+  background: #f2e9e4;
+  color: #22223b;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.tool-wrapper {
+  border-radius: 8px;
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto;
+  border: 3px dashed #22223b;
+  padding: 1.5rem 3rem;
+}
+
+.title {
+  text-align: center;
+  margin-block-end: 3.5rem;
+}
+
+/* Form styles */
+
+form {
+  all: unset;
+  display: flex;
+  gap: 3rem;
+}
+
+.input-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+/* Custom label animation */
+
+label {
+  position: absolute;
+  color: #22223b;
+  top: .95rem;
+  left: 1rem;
+  transition: all .2s ease-out;
+  cursor: text;
+  font-size: 1rem;
+}
+
+input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  all: unset;
+  background: #f2e9e4;
+  border: 2px solid #22223b;
+  border-radius: 5px;
+  color: #22223b;
+  padding-inline-start: 1rem;
+  width: 100%;
+  min-height: 3rem;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  top: -0.75rem;
+  left: .5rem;
+  background: #f2e9e4;
+  padding-inline: .75rem;
+}
+
+input:focus {
+outline: 3px dashed #f08080;
+}
+
+input:focus:not(:focus-visible) {
+outline: none;
+}
+
+input:focus-visible {
+outline: 3px dashed #f08080;
+}
+
+/* Custom +/- buttons */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity-nav {
+  position: absolute;
+  top: 0;
+  right: -1.25rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  height: 100%;
+}
+
+.btn-up, 
+.btn-down {
+  all: unset;
+  border: 2px solid #22223b;
+  cursor: pointer;
+  padding-inline: .35rem;
+  width: 1rem;
+  text-align: center;
+  height: 50%;
+  transition: all .2s ease;
+}
+
+.btn-up {
+  border-radius: 0 5px 0 0;
+}
+
+.btn-down {
+  border-top: 0;
+  border-radius: 0 0 5px 0;
+}
+
+.btn-up:hover,
+.btn-down:hover {
+  background: #22223b;
+  color: #f2e9e4;
+}
+
+.btn-up:focus,
+.btn-down:focus {
+  outline: 3px dashed #f08080;
+}
+  
+.btn-up:focus:not(:focus-visible),
+.btn-down:focus:not(:focus-visible) {
+  outline: none;
+}
+  
+.btn-up:focus-visible,
+.btn-down:focus-visible {
+  outline: 3px dashed #f08080;
+}
+
+/* Convert button */
+
+.convert-btn {
+  all: unset;
+  border: 2px solid #22223b;
+  border-radius: 5px;
+  cursor: pointer;
+  min-height: 3rem;
+  padding-inline: .75rem;
+  transition: all .2s ease;
+}
+
+.convert-btn:hover {
+  background: #22223b;
+  color: #f2e9e4;
+} 
+
+.convert-btn:focus {
+  outline: 3px dashed #f08080;
+}
+  
+.convert-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+  
+.convert-btn:focus-visible {
+  outline: 3px dashed #f08080;
+}
+
+/* Result display */
+
+.result-container {
+  margin-block: 3rem 1.5rem;
+}
+
+.result {
+  font-style: italic;
+  font-weight: 400;
+}
