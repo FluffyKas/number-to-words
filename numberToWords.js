@@ -35,6 +35,14 @@ function numberToWords(number) {
     }
   }
 
-  //For numbers less than 1000
+  //For numbers between 100 and 1000
+
+  if (number.length == 3) {
+    if (number[1] === "0" && number[2] === "0") {
+      resultText.innerText = `${units[number[0]] + " hundred"}`
+    } else {
+      resultText.innerText = `${units[number[0]] + " hundred and " + tens[number[1]] + "-" + units[number[2]]}`
+    }
+  }
 
 }
