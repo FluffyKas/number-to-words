@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number to Words Conversion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="tool-wrapper">
+      <h1 class="title">Number to words conversion tool</h1>
+      <form>
+        <div class="input-wrapper">
+          <input type="number" id="number-input" autocomplete="off" placeholder="">
+          <label for="number-input">Enter a number</label>
+          <div class="quantity-nav">
+            <button class="btn-up">+</button>
+            <button class="btn-down">-</button>
+          </div>
+        </div>
+        <button class="convert-btn" id="convert-btn">Convert</button>
+      </form>
+      <div class="result-container">
+        <h2 class="result-title">Result: <span class="result" id="result"></span></h2>
+      </div>
+    </div>
+  </main>
+
+  <script src="numberToWords.js"></script>
+</body>
+
+</html>
