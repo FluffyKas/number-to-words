@@ -13,14 +13,17 @@
 
   <main>
     <div class="tool-wrapper">
-      <h1 class="title">Number to words conversion tool</h1>
+      <div class="title-display">
+        <h1 class="title">Number to words conversion tool</h1>
+        <button class="rules" id="rules">How it works</button>
+      </div>
       <form>
         <div class="input-wrapper">
           <input type="number" id="number-input" autocomplete="off" placeholder="">
           <label for="number-input">Enter a number</label>
           <div class="quantity-nav">
-            <button class="btn-up">+</button>
-            <button class="btn-down">-</button>
+            <button class="btn-up" id="btn-up" aria-label="Increase value">+</button>
+            <button class="btn-down" id="btn-down" aria-label="Decrease value">-</button>
           </div>
         </div>
         <button class="convert-btn" id="convert-btn">Convert</button>
