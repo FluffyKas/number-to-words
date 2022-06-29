@@ -5,8 +5,6 @@
 - [Overview](#overview)
 - [Links](#links)
 - [Screenshots](#screenshots)
-- [My process](#my-process)
-- [Built with](#built-with)
 
 ## Overview
 
@@ -25,7 +23,3 @@ _Desktop view_
 _Mobile view_
 
 ![](./screenshots/conversion-tool-mobile.png)
-
-## My process
-
-## Built with
