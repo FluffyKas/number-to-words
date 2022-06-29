@@ -64,11 +64,37 @@ main {
   padding: 1.75rem 3rem;
 }
 
+.title-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .title {
   font-size: clamp(.5rem, 6vw, 2.5rem);
-  margin-block-end: 5rem;
+  margin-block-end: 1rem;
   text-align: center;
 }
+
+.rules {
+  all: unset;
+  cursor: pointer;
+  font-style: italic;
+  margin-block-end: 5rem;
+  text-decoration: underline;
+}
+
+.rules:focus {
+  outline: 3px dashed #f08080;
+  }
+  
+.rules:focus:not(:focus-visible) {
+  outline: none;
+  }
+  
+.rules:focus-visible {
+  outline: 3px dashed #f08080;
+  }
 
 /* Form styles */
 
