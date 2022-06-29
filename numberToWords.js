@@ -4,12 +4,7 @@ const resultText = document.getElementById("result");
 const btnUp = document.getElementById("btn-up");
 const btnDown = document.getElementById("btn-down");
 
-convertBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  let number = numberInput.value;
-  resultText.innerText = `${numberToWords(number)}`;
-
-})
+//Increment/decrement buttons
 
 btnUp.addEventListener("click", (e) => {
   e.preventDefault();
@@ -20,6 +15,17 @@ btnDown.addEventListener("click", (e) => {
   e.preventDefault();
   numberInput.value--;
 })
+
+//Conversion function
+
+convertBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  let number = numberInput.value;
+  resultText.innerText = `${numberToWords(number)}`;
+
+})
+
+
 
 function numberToWords(number) {
 
