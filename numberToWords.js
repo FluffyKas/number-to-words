@@ -72,15 +72,15 @@ function numberToWords(number) {
     return words;
   }
 
-  if (parsedNumber >= 100) {
+  if (parsedNumber >= 100 && parsedNumber < 1000) {
     convertBigNumber(100, " hundred ", " and ")
   }
 
-  if (parsedNumber >= 100000) {
+  if (parsedNumber >= 1000 && parsedNumber < 1000000) {
     convertBigNumber(1000, " thousand ", " and ")
   }
 
-  if (parsedNumber >= 1000000) {
+  if (parsedNumber >= 1000000 && parsedNumber < 1000000000) {
     convertBigNumber(1000000, " million ", " and ")
   }
 
