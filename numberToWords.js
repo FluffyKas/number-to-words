@@ -1,48 +1,87 @@
 const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert-btn");
 const resultText = document.getElementById("result");
+const btnUp = document.getElementById("btn-up");
+const btnDown = document.getElementById("btn-down");
 
 convertBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let number = numberInput.value;
-  numberToWords(number);
+  resultText.innerText = `${numberToWords(number)}`;
+
+})
+
+btnUp.addEventListener("click", (e) => {
+  e.preventDefault();
+  numberInput.value++;
+})
+
+btnDown.addEventListener("click", (e) => {
+  e.preventDefault();
+  numberInput.value--;
 })
 
 function numberToWords(number) {
+
+  let words;
 
   let units = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 
   let tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
-  //For 0
-  if (parseInt(number) === 0) {
-    resultText.innerText = "zero";
+  let parsedNumber = parseInt(number);
+
+  // For 0
+  if (parsedNumber === 0) {
+    words = "zero";
   }
 
   //For numbers less than 20
-  if (parseInt(number) !== 0 && parseInt(number) < 20) {
-    resultText.innerText = `${units[parseInt(number)]}`;
+  if (parsedNumber !== 0 && parsedNumber < 20) {
+    words = `${units[parseInt(parsedNumber)]}`;
   }
 
   //For numbers less than 100
-  if (parseInt(number) >= 20 && parseInt(number) < 100) {
-    let tensValue = Math.floor(number / 10);
-    let onesValue = number % 10;
+  if (parsedNumber >= 20 && parsedNumber < 100) {
+    let tensValue = Math.floor(parsedNumber / 10);
+    let onesValue = parsedNumber % 10;
     if (onesValue !== 0) {
-      resultText.innerText = `${tens[tensValue] + "-" + units[onesValue]}`;
+      words = `${tens[tensValue] + "-" + units[onesValue]}`;
     } else {
-      resultText.innerText = `${tens[tensValue]}`;
+      words = `${tens[tensValue]}`;
     }
   }
 
-  //For numbers between 100 and 1000
+  //For numbers greater than 100
 
-  if (number.length == 3) {
-    if (number[1] === "0" && number[2] === "0") {
-      resultText.innerText = `${units[number[0]] + " hundred"}`
+  let remainder;
+
+  function convertBigNumber(int, scale, conjunction) {
+    remainder = parsedNumber % int;
+    if (remainder > 0) {
+      words = numberToWords(Math.floor(parsedNumber / int)) + scale + conjunction + numberToWords(remainder);
     } else {
-      resultText.innerText = `${units[number[0]] + " hundred and " + tens[number[1]] + "-" + units[number[2]]}`
+      words = numberToWords(Math.floor(parsedNumber / int)) + scale;
     }
+    return words;
   }
 
+  if (parsedNumber >= 100) {
+    convertBigNumber(100, " hundred ", " and ")
+  }
+
+  if (parsedNumber >= 100000) {
+    convertBigNumber(1000, " thousand ", " and ")
+  }
+
+  if (parsedNumber >= 1000000) {
+    convertBigNumber(1000000, " million ", " and ")
+  }
+
+  if (parsedNumber >= 1000000000) {
+    convertBigNumber(1000000000, " billion ", " and ")
+  }
+
+
+  return words;
 }
