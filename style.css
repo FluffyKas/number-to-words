@@ -25,7 +25,7 @@ button {
 }
 
 body {
-  background: #f2e9e4;
+  background: #DAEAF1;
   color: #22223b;
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
@@ -132,7 +132,7 @@ input {
   top: 0;
   left: 0;
   all: unset;
-  background: #f2e9e4;
+  background: #DAEAF1;
   border: 2px solid #22223b;
   border-radius: 5px;
   color: #22223b;
@@ -145,7 +145,7 @@ input:focus ~ label,
 input:not(:placeholder-shown) ~ label {
   top: -0.75rem;
   left: .5rem;
-  background: #f2e9e4;
+  background: #DAEAF1;
   padding-inline: .75rem;
 }
 
@@ -209,7 +209,7 @@ input[type=number]
 .btn-up:hover,
 .btn-down:hover {
   background: #22223b;
-  color: #f2e9e4;
+  color: #DAEAF1;
 }
 
 .btn-up:focus,
@@ -241,7 +241,7 @@ input[type=number]
 
 .convert-btn:hover {
   background: #22223b;
-  color: #f2e9e4;
+  color: #DAEAF1;
 } 
 
 .convert-btn:focus {
