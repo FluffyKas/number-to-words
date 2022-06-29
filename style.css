@@ -77,11 +77,17 @@ main {
 }
 
 .rules {
-  all: unset;
   cursor: pointer;
   font-style: italic;
-  margin-block-end: 5rem;
   text-decoration: underline;
+}
+
+details {
+  margin-block-end: 2.5rem;
+}
+
+.details-note {
+  font-weight: 600;
 }
 
 .rules:focus {
